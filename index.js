@@ -6,13 +6,19 @@ const connectDB = async() => {
     await mongoose.connect("mongodb://127.0.0.1:27017/testdb");
     console.log("Connected to MongoDB");
 
-    const user = new User({
+    const user = await User.create({
         name: 'Umayer',
         age: 21,
-        email: 'mdumayer10@gmail.com'
+        email: 'mdumayer10@gmail.com',
     })
 
-    await user.save()
+    // const user = new User({
+    //     name: 'Umayer',
+    //     age: 21,
+    //     email: 'mdumayer10@gmail.com',
+    // })
+    // await user.save()
+
     console.log('saved')
 
   } 
@@ -20,5 +26,4 @@ const connectDB = async() => {
     console.log(err);
   }
 }
-
 connectDB();

@@ -11,6 +11,8 @@ const connectDB = async() => {
         age: 21,
         email: 'mdumayer10@gmail.com',
     })
+    user.name = "Ahmad"
+    await user.save()
 
     // const user = new User({
     //     name: 'Umayer',
